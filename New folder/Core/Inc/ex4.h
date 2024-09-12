@@ -5,12 +5,12 @@
  *      Author: ACER
  */
 
-#ifndef INC_EX1_H_
-#define INC_EX1_H_
+#ifndef INC_EX4_H_
+#define INC_EX4_H_
 
 #include "main.h"
 
 void init_ex4();
 void ex4_run();
-
+void display7SEG(int num);
 #endif /* INC_EX1_H_ */

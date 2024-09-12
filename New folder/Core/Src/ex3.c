@@ -11,6 +11,9 @@ int led_state3=state_green1;
 int counter3=0;
 
 void init_ex3(){
+	HAL_GPIO_TogglePin(GPIOA,GPIO_PIN_2);
+	HAL_GPIO_TogglePin(GPIOA,GPIO_PIN_3);
+	HAL_GPIO_TogglePin(GPIOA,GPIO_PIN_4);
 	HAL_GPIO_TogglePin(GPIOA,GPIO_PIN_5);
 	HAL_GPIO_TogglePin(GPIOA,GPIO_PIN_6);
 	HAL_GPIO_TogglePin(GPIOA,GPIO_PIN_7);

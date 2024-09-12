@@ -5,8 +5,8 @@
  *      Author: ACER
  */
 
-#ifndef INC_EX1_H_
-#define INC_EX1_H_
+#ifndef INC_EX6_H_
+#define INC_EX6_H_
 
 #include "main.h"
 
