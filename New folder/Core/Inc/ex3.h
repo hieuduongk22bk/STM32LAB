@@ -8,6 +8,8 @@
 #ifndef INC_EX1_H_
 #define INC_EX1_H_
 
+#include "main.h"
 
-
+void init_ex3();
+void ex3_run();
 #endif /* INC_EX1_H_ */

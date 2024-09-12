@@ -5,4 +5,7 @@
  *      Author: ACER
  */
 
+#include "ex3.h"
 
+void init_ex1();
+void ex1_run();

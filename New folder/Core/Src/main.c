@@ -22,7 +22,13 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "ex1.h"
+#include "ex2.h"
+#include "ex3.h"
+#include "ex4.h"
+#include "ex5.h"
+#include "ex6_9.h"
+#include "ex10.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -95,6 +101,9 @@ int main(void)
   {
     /* USER CODE END WHILE */
 	  	  //lab1main
+	  //init_ex1();
+	  ex2_run();
+	  HAL_Delay(1000);
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
