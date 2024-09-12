@@ -1,0 +1,7 @@
+ex6_10.c:10:6:init_ex6_10	8	static
+ex6_10.c:21:6:ex6_run	4	static
+ex6_10.c:26:6:clearAllClock	4	static
+ex6_10.c:29:6:setNumberOnClock	16	static
+ex6_10.c:33:6:clearNumberOnClock	16	static
+ex6_10.c:40:6:init_ex10	8	static
+ex6_10.c:45:6:ex10_run	8	static
