@@ -104,7 +104,7 @@ int main(void)
 	  //init_ex1();
 
 	  ex10_run();
-	  HAL_Delay(200);
+	  HAL_Delay(300);
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
