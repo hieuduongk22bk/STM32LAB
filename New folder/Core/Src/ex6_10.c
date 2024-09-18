@@ -34,9 +34,10 @@ void clearNumberOnClock(int num){
 	HAL_GPIO_WritePin(GPIOA, pins[num], RESET);
 }
 
-int second=30;
-int minute=59;
-int hour=2;
+int second=0;
+int minute=0;
+int hour=0;
+
 void init_ex10(){
 	setNumberOnClock(second);
 	setNumberOnClock(minute);
