@@ -34,8 +34,8 @@ void clearNumberOnClock(int num){
 	HAL_GPIO_WritePin(GPIOA, pins[num], RESET);
 }
 
-int second=0;
-int minute=0;
+int second=55;
+int minute=49;
 int hour=0;
 
 void init_ex10(){
@@ -44,10 +44,13 @@ void init_ex10(){
 	setNumberOnClock(hour);
 }
 void ex10_run() {
+
+	clearAllClock();
+	setNumberOnClock(second / 5);
+	setNumberOnClock(minute / 5);
+	setNumberOnClock(hour % 12);
+
     second++;
-    if(second/5 >= 1 ) clearNumberOnClock(second/5-1);
-    if(minute/5 >= 1 ) clearNumberOnClock(minute/5-1);
-    if(hour%12 >= 1) clearNumberOnClock(hour%12-1);
     if (second >= 60) {
     	minute++;
     	second = 0;
@@ -55,13 +58,16 @@ void ex10_run() {
     if(minute >= 60) {
     	hour++;
     	minute = 0;
+
     }
-    if (hour >= 24) hour = 0;
+    if (hour >= 24){
+    	hour = 0;
+    }
 
     // Set LEDs for seconds, minutes, and hours
-    setNumberOnClock(second / 5);
-    setNumberOnClock(minute / 5);
-    setNumberOnClock(hour % 12);
+
+
+
 
 
 }

@@ -103,7 +103,7 @@ int main(void)
 	  	  //lab1main
 	  //init_ex1();
 
-	  ex5_run();
+	  ex10_run();
 	  HAL_Delay(1000);
     /* USER CODE BEGIN 3 */
   }
