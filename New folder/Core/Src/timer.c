@@ -11,7 +11,7 @@
 int timer_flag[10];
 int counter[10];
 
-void timerSet(int index, int dur){
+void setTimer(int index, int dur){
 	timer_flag[index]= 0;
 	counter[index] = dur/10;
 }
@@ -23,5 +23,5 @@ void timerRun(){
 	}
 }
 int boolflag(int index){
-	return timer_flag[i];
+	return timer_flag[index];
 }

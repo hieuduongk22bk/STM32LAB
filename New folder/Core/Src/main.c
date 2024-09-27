@@ -19,10 +19,11 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-/* Private includes ----------------------------------------------------------*/
-#include "timer.h"
-/* USER CODE BEGIN Includes */
 
+/* Private includes ----------------------------------------------------------*/
+/* USER CODE BEGIN Includes */
+#include "timer.h"
+#include "ex2_1.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -88,17 +89,21 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_TIM2_Init();
-  HAL_TIM_Base_Start_IT(&htim2);
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  //ex1:
+ setTimer(0,1000);
   while (1)
   {
     /* USER CODE END WHILE */
-
+	  if(timer_flag[0]==1){
+		  ex21_run();
+	  }
+	 setTimer(0,1000);
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -230,7 +235,7 @@ static void MX_GPIO_Init(void)
 
 /* USER CODE BEGIN 4 */
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
-	timerRun;
+	timerRun();
 }
 /* USER CODE END 4 */
 

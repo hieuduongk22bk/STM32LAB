@@ -9,8 +9,12 @@
 #define INC_EX2_1_H_
 
 #include "main.h"
+#include "timer.h"
 
-void init_ex2_1();
-void ex2_1run();
+#define en0 0
+#define en1 1
+void display7SEG(int num);
+void init_ex21();
+void ex21_run();
 
 #endif /* INC_EX2_1_H_ */

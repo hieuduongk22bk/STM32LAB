@@ -10,7 +10,7 @@
 
 extern int timer_flag[10];
 
-void timerSet(int index, int dur);
+void setTimer(int index, int dur);
 void timerRun();
 int boolflag(int index);
 
