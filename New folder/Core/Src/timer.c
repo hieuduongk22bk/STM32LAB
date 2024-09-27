@@ -18,8 +18,12 @@ void setTimer(int index, int dur){
 
 void timerRun(){
 	for(int i=0;i<5;i++){
-		if(counter[i] > 0) counter[i]--;
-		if(counter[i] <= 0) timer_flag[i] = 1;
+		if(counter[i] > 0)
+			{
+			counter[i]--;
+			if(counter[i] <= 0) timer_flag[i] = 1;
+			}
+
 	}
 }
 int boolflag(int index){

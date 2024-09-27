@@ -8,7 +8,7 @@
 
 int enable = en0;
 void ex21_run(){
-	//if(boolflag(0)==1){
+	if(boolflag(0)==1){
 	switch (enable){
 	case en0:
 		HAL_GPIO_WritePin(GPIOA,GPIO_PIN_6,RESET);
@@ -23,20 +23,17 @@ void ex21_run(){
 		display7SEG(2);
 		enable = en0;
 		break;
+	default:
+			break;
 	}
-	//}
-	//setTimer(0,1000);
+	setTimer(0,1000);
+	}
+
 }
 
 void display7SEG(int num){
-				HAL_GPIO_WritePin(GPIOB,GPIO_PIN_0,RESET);
-				HAL_GPIO_WritePin(GPIOB,GPIO_PIN_1,RESET);
-				HAL_GPIO_WritePin(GPIOB,GPIO_PIN_2,RESET);
-				HAL_GPIO_WritePin(GPIOB,GPIO_PIN_3,RESET);
-				HAL_GPIO_WritePin(GPIOB,GPIO_PIN_4,RESET);
-				HAL_GPIO_WritePin(GPIOB,GPIO_PIN_5,RESET);
-				HAL_GPIO_WritePin(GPIOB,GPIO_PIN_6,RESET);
-
+	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0|GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_3|GPIO_PIN_4|GPIO_PIN_5|GPIO_PIN_6
+	          |GPIO_PIN_7|GPIO_PIN_8|GPIO_PIN_9, RESET);
 		switch(num){
 		case 0:
 			HAL_GPIO_WritePin(GPIOB,GPIO_PIN_6,SET);

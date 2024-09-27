@@ -13,8 +13,8 @@
 
 #define en0 0
 #define en1 1
-void display7SEG(int num);
+
 void init_ex21();
 void ex21_run();
-
+void display7SEG(int num);
 #endif /* INC_EX2_1_H_ */
