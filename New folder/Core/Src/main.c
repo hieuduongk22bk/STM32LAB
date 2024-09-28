@@ -22,7 +22,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "timer.h"
+
 #include "ex2_1.h"
 /* USER CODE END Includes */
 
@@ -96,14 +96,10 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  //ex1:
- setTimer(0,10);
+
   while (1)
   {
     /* USER CODE END WHILE */
-
-		  ex21_run();
-
 
 
     /* USER CODE BEGIN 3 */
@@ -236,8 +232,13 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+int counter = 100;
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
-	timerRun();
+	if(counter > 0) counter-- ;
+	if(counter <= 0){
+		counter = 100;
+		ex21_run();
+	}
 }
 /* USER CODE END 4 */
 

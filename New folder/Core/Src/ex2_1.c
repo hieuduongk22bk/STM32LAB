@@ -8,7 +8,7 @@
 
 int enable = en0;
 void ex21_run(){
-	if(boolflag(0)==1){
+
 	switch (enable){
 	case en0:
 		HAL_GPIO_WritePin(GPIOA,GPIO_PIN_6,RESET);
@@ -26,8 +26,7 @@ void ex21_run(){
 	default:
 			break;
 	}
-	setTimer(0,1000);
-	}
+
 
 }
 
