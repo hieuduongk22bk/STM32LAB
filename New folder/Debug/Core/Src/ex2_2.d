@@ -1,4 +1,4 @@
-Core/Src/ex2_1.o: ../Core/Src/ex2_1.c ../Core/Inc/ex2_1.h \
+Core/Src/ex2_2.o: ../Core/Src/ex2_2.c ../Core/Inc/ex2_2.h \
  ../Core/Inc/main.h ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h \
  ../Core/Inc/stm32f1xx_hal_conf.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h \
@@ -25,7 +25,7 @@ Core/Src/ex2_1.o: ../Core/Src/ex2_1.c ../Core/Inc/ex2_1.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
  ../Core/Inc/timer.h
 
-../Core/Inc/ex2_1.h:
+../Core/Inc/ex2_2.h:
 
 ../Core/Inc/main.h:
 
