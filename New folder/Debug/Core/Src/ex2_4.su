@@ -1,0 +1,4 @@
+ex2_4.c:23:6:init_ex24	4	static
+ex2_4.c:24:6:ex24_run	8	static
+ex2_4.c:30:6:display7SEG	16	static
+ex2_4.c:77:6:update7SEG	16	static
