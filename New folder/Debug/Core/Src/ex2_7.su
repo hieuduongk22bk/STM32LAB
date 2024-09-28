@@ -1,0 +1,5 @@
+ex2_7.c:16:6:init_ex27	4	static
+ex2_7.c:17:6:ex27_run	8	static
+ex2_7.c:43:6:display7SEG	16	static
+ex2_7.c:97:6:update7SEG	16	static
+ex2_7.c:136:6:updateClockBuffer	8	static

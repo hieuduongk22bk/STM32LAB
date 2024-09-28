@@ -23,7 +23,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "timer.h"
-#include "ex2_1.h"
+#include "ex2_9.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -96,13 +96,14 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  //ex1:
  setTimer(0,10);
+ setTimer(1,10);
+ setTimer(2,10);
   while (1)
   {
     /* USER CODE END WHILE */
-
-		  ex21_run();
+	  //ex27_run();
+		  ex29_run();
 
 
 

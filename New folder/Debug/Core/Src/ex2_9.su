@@ -1,0 +1,6 @@
+ex2_9.c:19:6:init_ex29	4	static
+ex2_9.c:21:6:ex29_run	8	static
+ex2_9.c:52:6:display7SEG1	16	static
+ex2_9.c:106:6:update7SEG1	16	static
+ex2_9.c:145:6:updateClockBuffer1	8	static
+ex2_9.c:167:6:updateLEDMatrix	24	static
