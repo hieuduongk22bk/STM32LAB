@@ -1,5 +1,7 @@
+"./Core/Src/ex2_10.o"
 "./Core/Src/ex2_7.o"
 "./Core/Src/ex2_9.o"
+"./Core/Src/global.o"
 "./Core/Src/main.o"
 "./Core/Src/stm32f1xx_hal_msp.o"
 "./Core/Src/stm32f1xx_it.o"

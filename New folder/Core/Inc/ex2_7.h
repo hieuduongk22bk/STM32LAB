@@ -10,11 +10,9 @@
 
 #include "main.h"
 #include "timer.h"
-
+#include "global.h"
 void init_ex27();
 void ex27_run();
-void display7SEG(int num);
-void update7SEG(int index);
-void updateClockBuffer();
+
 
 #endif /* INC_EX2_6_H_ */

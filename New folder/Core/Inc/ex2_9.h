@@ -10,11 +10,10 @@
 
 #include "main.h"
 #include "timer.h"
+#include "global.h"
 
 void init_ex29();
 void ex29_run();
-void display7SEG1(int num);
-void update7SEG1(int index);
-void updateClockBuffer1();
-void updateLEDMatrix(int index);
+
+
 #endif /* INC_EX2_9_H_ */

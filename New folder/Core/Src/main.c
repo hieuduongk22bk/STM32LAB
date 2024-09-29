@@ -24,6 +24,8 @@
 /* USER CODE BEGIN Includes */
 #include "timer.h"
 #include "ex2_9.h"
+#include "ex2_7.h"
+#include "ex2_10.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -96,16 +98,19 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
- setTimer(0,10);
- setTimer(1,10);
- setTimer(2,10);
- setTimer(3,10);
+// setTimer(0,10);
+// setTimer(1,10);
+// setTimer(2,10);
+// setTimer(3,10);
+//ex10
+ setTimer(0,500);
+ setTimer(1,4000);
   while (1)
   {
     /* USER CODE END WHILE */
 	  //ex27_run();
-		  ex29_run();
-
+		 // ex29_run();
+	  ex210_run();
 
 
     /* USER CODE BEGIN 3 */
