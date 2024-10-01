@@ -6,7 +6,9 @@
  */
 #include"ex2_10.h"
 int temp;
+
 void init_ex210(){}
+
 void ex210_run(){
 	if(boolflag(0)==1){
 		temp=matrix_buffer[0];
@@ -21,12 +23,5 @@ void ex210_run(){
 				}
 		setTimer(0,500);
 }
-//	if(boolflag(1)==1){
-//		temp=matrix_buffer[0];
-//				for(int i=0;i<7;i++){
-//					matrix_buffer[i]= matrix_buffer[i+1];
-//				}
-//				matrix_buffer[7]=temp;
-//				setTimer(1,8000);
-//	}
+
 }
