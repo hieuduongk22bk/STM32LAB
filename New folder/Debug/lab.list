@@ -77,11 +77,11 @@ Disassembly of section .text:
  8000148:	08001db0 	.word	0x08001db0
 
 0800014c <ex210_run>:
- *      Author: ACER
- */
 #include"ex2_10.h"
 int temp;
+
 void init_ex210(){}
+
 void ex210_run(){
  800014c:	b580      	push	{r7, lr}
  800014e:	af00      	add	r7, sp, #0
@@ -142,11 +142,8 @@ void ex210_run(){
  80001a8:	f44f 71fa 	mov.w	r1, #500	; 0x1f4
  80001ac:	2000      	movs	r0, #0
  80001ae:	f000 fa93 	bl	80006d8 <setTimer>
-//					matrix_buffer[i]= matrix_buffer[i+1];
-//				}
-//				matrix_buffer[7]=temp;
-//				setTimer(1,8000);
-//	}
+}
+
 }
  80001b2:	bf00      	nop
  80001b4:	bd80      	pop	{r7, pc}
@@ -432,10 +429,10 @@ int main(void)
   HAL_TIM_Base_Start_IT(&htim2);
  80003bc:	4807      	ldr	r0, [pc, #28]	; (80003dc <main+0x34>)
  80003be:	f001 f93f 	bl	8001640 <HAL_TIM_Base_Start_IT>
-// setTimer(0,10);
-// setTimer(1,10);
-// setTimer(2,10);
-// setTimer(3,10);
+// setTimer(0,100);
+// setTimer(1,1000);
+// setTimer(2,1000);
+// setTimer(3,100);
 //ex10
  setTimer(0,500);
  80003c2:	f44f 71fa 	mov.w	r1, #500	; 0x1f4
@@ -449,7 +446,7 @@ int main(void)
   {
     /* USER CODE END WHILE */
 	  //ex27_run();
-		 // ex29_run();
+	  //ex29_run();
 	  ex210_run();
  80003d6:	f7ff feb9 	bl	800014c <ex210_run>
  80003da:	e7fc      	b.n	80003d6 <main+0x2e>

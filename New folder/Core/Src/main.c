@@ -98,10 +98,15 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-// setTimer(0,10);
-// setTimer(1,10);
-// setTimer(2,10);
-// setTimer(3,10);
+  //ex7
+// setTimer(0,500);
+// setTimer(1,1000);
+// setTimer(2,1000);
+ //ex9
+// setTimer(0,100);
+// setTimer(1,1000);
+// setTimer(2,1000);
+// setTimer(3,100);
 //ex10
  setTimer(0,500);
  setTimer(1,4000);
@@ -109,7 +114,7 @@ int main(void)
   {
     /* USER CODE END WHILE */
 	  //ex27_run();
-		 // ex29_run();
+	  //ex29_run();
 	  ex210_run();
 
 
