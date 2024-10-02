@@ -13,7 +13,7 @@ void init_ex27(){}
 void ex27_run(){
 	if(boolflag(0)==1){
 		  updateClockBuffer();
-		  setTimer(0,500);
+		  setTimer(0,250);
 }
 	if(boolflag(1)==1){
 			  second++;
