@@ -5,4 +5,6 @@
  *      Author: ACER
  */
 
+#include "global.h"
+int status = INIT;
 

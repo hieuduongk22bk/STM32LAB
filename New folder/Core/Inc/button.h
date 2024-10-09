@@ -17,6 +17,6 @@
 
 
 void getButton();
-
+int isButtonPress(int num);
 
 #endif /* INC_BUTTON_H_ */

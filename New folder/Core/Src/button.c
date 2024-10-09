@@ -40,3 +40,11 @@ void getButton() {
 		}
 	}
 }
+
+int isButtonPress(int num){
+	if(button_flag[num] == 1) {
+		button_flag[num] = 0;
+		return 1;
+	}
+	return 0;
+}
