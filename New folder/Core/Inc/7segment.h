@@ -12,5 +12,8 @@
 
 void display7seg_1(int num);
 void display7seg_2(int num);
+void update7seg(int index);
+
+
 
 #endif /* INC_7SEGMENT_H_ */
