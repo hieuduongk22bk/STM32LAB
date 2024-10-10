@@ -5,7 +5,7 @@
  *      Author: ACER
  */
 
-#include "7segment.c"
+#include "7segment.h"
 
 int led_buffer[4] = { 0 };
 int index_led_1 = 0;
@@ -116,28 +116,28 @@ void update7seg(int index) {
 		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_8, SET);
 		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_7, RESET);
 		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_8, RESET);
-		display7seg_1(led_buffer1[0]);
+		display7seg_1(led_buffer[0]);
 		break;
 	case 1:
 		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_7, SET);
 		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_8, RESET);
 		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_7, RESET);
 		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_8, RESET);
-		display7seg_1(led_buffer1[1]);
+		display7seg_1(led_buffer[1]);
 		break;
 	case 2:
 		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_7, RESET);
 		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_8, RESET);
 		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_7, SET);
 		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_8, RESET);
-		display7seg_2(led_buffer2[2]);
+		display7seg_2(led_buffer[2]);
 		break;
 	case 3:
 		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_7, RESET);
 		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_8, RESET);
 		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_7, RESET);
 		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_8, SET);
-		display7seg_2(led_buffer2[3]);
+		display7seg_2(led_buffer[3]);
 		break;
 	}
 }

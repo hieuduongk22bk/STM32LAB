@@ -10,7 +10,7 @@
 
 #include "main.h"
 
-#define NO_BUTTON 1
+#define NO_BUTTON 3
 #define INCREASING_DUR 100
 #define BUTTON_PRESSED GPIO_PIN_RESET
 #define BUTTON_RELEASED GPIO_PIN_SET
@@ -19,4 +19,5 @@
 void getButton();
 int isButtonPress(int num);
 
+extern int button_flag[NO_BUTTON];
 #endif /* INC_BUTTON_H_ */

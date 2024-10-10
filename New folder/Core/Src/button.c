@@ -7,22 +7,24 @@
 
 #include "button.h"
 
-static GPIO_PinState buttonBuffer[NO_BUTTON];
-static GPIO_PinState keyReg1[NO_BUTTON];
-static GPIO_PinState keyReg2[NO_BUTTON];
-static GPIO_PinState keyReg3[NO_BUTTON];
+int keyReg0[NO_BUTTON];
+int keyReg1[NO_BUTTON];
+int keyReg2[NO_BUTTON];
+int keyReg3[NO_BUTTON];
 
-static int button_flag[NO_BUTTON];
-static int TimeOut = 500;
+int button_flag[NO_BUTTON];
+int TimeOut = 500;
 
 void getButton() {
 	for (int i = 0; i < NO_BUTTON; i++) {
 		keyReg2[i] = keyReg1[i];
-		keyReg1[i] = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_5);
+		keyReg1[0] = HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_4);
+		keyReg1[1] = HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_5);
+		keyReg1[2] = HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_6);
 
 		if (keyReg1[i] == keyReg2[i] && keyReg1[i] == keyReg0[i]) {
 			if (keyReg2[i] != keyReg3[i]) {
-				keyReg3 = keyReg2;
+				keyReg3[i] = keyReg2[i];
 
 				if (keyReg3[i] == BUTTON_PRESSED) {
 					TimeOut = 500;

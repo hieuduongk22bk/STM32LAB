@@ -12,6 +12,7 @@
 #include "timer.h"
 #include "button.h"
 #include "led_traffic.h"
+#include "7segment.h"
 
 #define INIT 0
 #define RED_GREEN 1
@@ -25,5 +26,5 @@
 #define MAN_AMBER_RED 14
 
 extern int status;
-
+extern int red_time, amber_time, green_time;
 #endif /* INC_GLOBAL_H_ */
