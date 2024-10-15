@@ -22,7 +22,9 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "button.h"
+#include "fsm_auto.h"
+#include "fsm_manual.h"
+#include "global.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -95,9 +97,16 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  setTimer(0,1000);
   while (1)
   {
     /* USER CODE END WHILE */
+	  if(timerFlag[0]==1) {
+		  update7segBuffer(15,2);
+		  setTimer(0,1000);
+	  }
+	 // fsm_auto_run();
+		  //TODO
 
     /* USER CODE BEGIN 3 */
   }
@@ -240,6 +249,7 @@ static void MX_GPIO_Init(void)
 /* USER CODE BEGIN 4 */
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 	getButton();
+	timerRun();
 }
 
 /* USER CODE END 4 */

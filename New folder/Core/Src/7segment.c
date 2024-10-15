@@ -7,13 +7,16 @@
 
 #include "7segment.h"
 
-int led_buffer[4] = { 0 };
+int led_buffer[4] = {0,0,0,0};
 int index_led_1 = 0;
 
 void display7seg_1(int num) {
 	HAL_GPIO_WritePin(GPIOA,
 			GPIO_PIN_9 | GPIO_PIN_10 | GPIO_PIN_11 | GPIO_PIN_12 | GPIO_PIN_13
 					| GPIO_PIN_14 | GPIO_PIN_15, RESET);
+	HAL_GPIO_WritePin(GPIOB,
+				GPIO_PIN_9 | GPIO_PIN_10 | GPIO_PIN_11 | GPIO_PIN_12 | GPIO_PIN_13
+						| GPIO_PIN_14 | GPIO_PIN_15, SET);
 	switch (num) {
 	case 0:
 		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_15, SET);
@@ -64,6 +67,9 @@ void display7seg_2(int num) {
 	HAL_GPIO_WritePin(GPIOB,
 			GPIO_PIN_9 | GPIO_PIN_10 | GPIO_PIN_11 | GPIO_PIN_12 | GPIO_PIN_13
 					| GPIO_PIN_14 | GPIO_PIN_15, RESET);
+	HAL_GPIO_WritePin(GPIOA,
+				GPIO_PIN_9 | GPIO_PIN_10 | GPIO_PIN_11 | GPIO_PIN_12 | GPIO_PIN_13
+						| GPIO_PIN_14 | GPIO_PIN_15, SET);
 	switch (num) {
 	case 0:
 		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_15, SET);
@@ -128,15 +134,15 @@ void update7seg(int index) {
 	case 2:
 		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_7, RESET);
 		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_8, RESET);
-		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_7, SET);
-		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_8, RESET);
+		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_7, RESET);
+		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_8, SET);
 		display7seg_2(led_buffer[2]);
 		break;
 	case 3:
 		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_7, RESET);
 		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_8, RESET);
-		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_7, RESET);
-		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_8, SET);
+		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_7, SET);
+		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_8, RESET);
 		display7seg_2(led_buffer[3]);
 		break;
 	}

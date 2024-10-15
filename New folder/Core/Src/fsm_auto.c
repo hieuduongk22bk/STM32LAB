@@ -20,14 +20,14 @@ switch(status){
 		//TODO INIT
 		if(1){
 			status = GREEN_RED;
-			setTimer(0,red_time*1000);
+			setTimer(0,5000);
 			button_flag[0] = 0; // chuan bi cho trang thai nut nhan, dam bao truoc trang thai GREEN_RED button=0 (vi GREEN_RED co doi nut nhan)
 			setTimer(2,10);
 		}
 		break;
 	case GREEN_RED:
 		led_green_red();
-		update7segBuffer(local_green_time,local_red_time);
+		//update7segBuffer(15,2);
 
 		if(checkTimer(2)==1){
 			//Update Display;
