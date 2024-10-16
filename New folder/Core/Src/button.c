@@ -1,52 +1,43 @@
-/*
- * button.c
- *
- *  Created on: Oct 5, 2024
- *      Author: ACER
- */
-
 #include "button.h"
+int KeyReg0[NUM_BUT] = {NORMAL_STATE};
+int KeyReg1[NUM_BUT] = {NORMAL_STATE};
+int KeyReg2[NUM_BUT] = {NORMAL_STATE};
+int KeyReg3[NUM_BUT] = {NORMAL_STATE};
 
-int keyReg0[NO_BUTTON];
-int keyReg1[NO_BUTTON];
-int keyReg2[NO_BUTTON];
-int keyReg3[NO_BUTTON];
+int TimeOutForKeyPress =  500;
+int button__pressed = 0;
+int button_long_pressed = 0;
+int button_flag[NUM_BUT] = {0};
 
-int button_flag[NO_BUTTON];
-int TimeOut = 500;
 
-void getButton() {
-	for (int i = 0; i < NO_BUTTON; i++) {
-		keyReg2[i] = keyReg1[i];
-		keyReg1[0] = HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_4);
-		keyReg1[1] = HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_5);
-		keyReg1[2] = HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_6);
+void getKeyInput(){
+	for(int i=0;i<NUM_BUT;i++){
+  KeyReg2[i] = KeyReg1[i];
+  KeyReg1[i] = KeyReg0[i];
+  // Add your key
+  KeyReg0[0] = HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_4);
 
-		if (keyReg1[i] == keyReg2[i] && keyReg1[i] == keyReg0[i]) {
-			if (keyReg2[i] != keyReg3[i]) {
-				keyReg3[i] = keyReg2[i];
+  if ((KeyReg1[i] == KeyReg0[i]) && (KeyReg1[i] == KeyReg2[i])){
+    if (KeyReg2[i] != KeyReg3[i]){
+      KeyReg3[i] = KeyReg2[i];
 
-				if (keyReg3[i] == BUTTON_PRESSED) {
-					TimeOut = 500;
-					button_flag[i] = 1;
-				}
-			} else {
-				TimeOut--;
-				if (TimeOut == 0) {
-					TimeOut = 500;
-					if (keyReg3[i] == BUTTON_PRESSED) {
-						button_flag[i] = 1;
-					}
-				}
-			}
-		}
-	}
+      if (KeyReg3[i] == PRESSED_STATE){
+        TimeOutForKeyPress = 500;
+        //subKeyProcess();
+        button_flag[i] = 1;
+      }
+
+    }else{
+        TimeOutForKeyPress --;
+        if (TimeOutForKeyPress == 0){
+        	TimeOutForKeyPress = 500;
+        	if (KeyReg3[i] == PRESSED_STATE){
+        		//subKeyProcess();
+        		button_flag[i] = 1;
+        	}
+        }
+    }
+  }
+}
 }
 
-int isButtonPress(int num){
-	if(button_flag[num] == 1) {
-		button_flag[num] = 0;
-		return 1;
-	}
-	return 0;
-}

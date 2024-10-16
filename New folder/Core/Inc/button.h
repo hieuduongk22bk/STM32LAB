@@ -1,8 +1,8 @@
 /*
  * button.h
  *
- *  Created on: Oct 5, 2024
- *      Author: ACER
+ *  Created on: Oct 5, 2023
+ *      Author: KAI
  */
 
 #ifndef INC_BUTTON_H_
@@ -10,14 +10,12 @@
 
 #include "main.h"
 
-#define NO_BUTTON 3
-#define INCREASING_DUR 100
-#define BUTTON_PRESSED GPIO_PIN_RESET
-#define BUTTON_RELEASED GPIO_PIN_SET
+#define NORMAL_STATE 1
+#define PRESSED_STATE 0
+#define NUM_BUT 1
+extern int button_flag[NUM_BUT];
 
+void getKeyInput();
 
-void getButton();
-int isButtonPress(int num);
-
-extern int button_flag[NO_BUTTON];
 #endif /* INC_BUTTON_H_ */
+

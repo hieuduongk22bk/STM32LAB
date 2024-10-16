@@ -27,4 +27,5 @@
 
 extern int status;
 extern int red_time, amber_time, green_time;
+extern int local_red_time,local_green_time,local_amber_time;
 #endif /* INC_GLOBAL_H_ */

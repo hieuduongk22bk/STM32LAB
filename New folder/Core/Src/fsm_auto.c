@@ -7,49 +7,63 @@
 
 #include"fsm_auto.h"
 
-int local_red_time,local_green_time,local_amber_time;
 
 void fsm_auto_run(){
-
-	local_red_time = red_time;
-	local_green_time = green_time;
-	local_amber_time = amber_time;
-
 switch(status){
 	case INIT:
 		//TODO INIT
 		if(1){
 			status = GREEN_RED;
-			setTimer(0,5000);
+			setTimer(0,green_time);
 			button_flag[0] = 0; // chuan bi cho trang thai nut nhan, dam bao truoc trang thai GREEN_RED button=0 (vi GREEN_RED co doi nut nhan)
 			setTimer(2,10);
+			setTimer(3,1000);
 		}
 		break;
 	case GREEN_RED:
 		led_green_red();
-		//update7segBuffer(15,2);
-
-		if(checkTimer(2)==1){
-			//Update Display;
+		if(checkTimer(3)==1){
 			local_green_time--;
 			local_red_time--;
-			setTimer(2,1000);
+			if(local_green_time <= 0) local_green_time = green_time;
+
+		}
+		if(checkTimer(2)==1){
+			//Update Display;
+			update7segBuffer(local_green_time,local_red_time);
+			setTimer(2,250);
 		}
 		if(checkTimer(0)==1){
 			status = AMBER_RED;
-			setTimer(0,2000);
+			setTimer(0,amber_time);
 		}
-		if(button_flag[0]==1){
-			status = MAN_GREEN_RED;
-			setTimer(1,10000);
-			button_flag[0] = 0; // chuan bi cho trang thai nut nhan, dam bao truoc trang thai tiep theo button=0
-		}
+//		if(button_flag[0]==1){
+//		status = MAN_GREEN_RED;
+//		setTimer(1,10000);
+//		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, SET);
+//		button_flag[0] = 0; // chuan bi cho trang thai nut nhan, dam bao truoc trang thai tiep theo button=0
+//		}
 		break;
 	case AMBER_RED:
+		led_amber_red();
+		if(checkTimer(0)==1){
+			status = RED_GREEN;
+			setTimer(0,green_time);
+				}
 		break;
 	case RED_GREEN:
+		led_red_green();
+		if (checkTimer(0) == 1) {
+			status = RED_AMBER;
+			setTimer(0, amber_time);
+		}
 		break;
 	case RED_AMBER:
+		led_red_amber();
+		if (checkTimer(0) == 1) {
+			status = GREEN_RED;
+			setTimer(0, green_time);
+		}
 		break;
 	default:
 		break;
