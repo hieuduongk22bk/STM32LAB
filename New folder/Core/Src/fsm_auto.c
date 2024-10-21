@@ -14,11 +14,14 @@ void fsm_auto_run() {
 		//TODO INIT
 		if (1) {
 			status = GREEN_RED;
+
 			local_green_time = green_time/1000;
 			local_red_time = red_time/1000;
 			local_amber_time = amber_time/1000;
-			setTimer(0, green_time);
+
 			button_flag[0] = 0; // chuan bi cho trang thai nut nhan, dam bao truoc trang thai GREEN_RED button=0 (vi GREEN_RED co doi nut nhan)
+
+			setTimer(0, green_time);
 			setTimer(2, 10);
 			setTimer(3, 1000);
 		}
@@ -41,12 +44,14 @@ void fsm_auto_run() {
 			status = AMBER_RED;
 			setTimer(0, amber_time);
 		}
-//		if(button_flag[0]==1){
-//		status = MAN_GREEN_RED;
-//		setTimer(1,10000);
-//		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, SET);
-//		button_flag[0] = 0; // chuan bi cho trang thai nut nhan, dam bao truoc trang thai tiep theo button=0
-//		}
+
+		if(button_flag[0]==1){
+		status = MAN_GREEN_RED;
+		setTimer(1,10000);
+		setTimer(2,10);
+		HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_0);
+		button_flag[0] = 0; // chuan bi cho trang thai nut nhan, dam bao truoc trang thai tiep theo button=0
+		}
 		break;
 	case AMBER_RED:
 		led_amber_red();
@@ -66,6 +71,15 @@ void fsm_auto_run() {
 			update7segBuffer(local_amber_time , local_red_time);
 			setTimer(2, 250);
 		}
+
+		if(button_flag[0]==1){
+				status = MAN_GREEN_RED;
+				setTimer(1,10000);
+				setTimer(2,10);
+				HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_0);
+				button_flag[0] = 0; // chuan bi cho trang thai nut nhan, dam bao truoc trang thai tiep theo button=0
+				}
+
 		break;
 	case RED_GREEN:
 		led_red_green();
@@ -85,6 +99,14 @@ void fsm_auto_run() {
 			update7segBuffer(local_red_time, local_green_time);
 			setTimer(2, 250);
 		}
+
+		if(button_flag[0]==1){
+				status = MAN_GREEN_RED;
+				setTimer(1,10000);
+				setTimer(2,10);
+				HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_0);
+				button_flag[0] = 0; // chuan bi cho trang thai nut nhan, dam bao truoc trang thai tiep theo button=0
+				}
 		break;
 	case RED_AMBER:
 		led_red_amber();
@@ -104,6 +126,14 @@ void fsm_auto_run() {
 			update7segBuffer(local_red_time, local_amber_time);
 			setTimer(2, 250);
 		}
+
+		if(button_flag[0]==1){
+				status = MAN_GREEN_RED;
+				setTimer(1,10000);
+				setTimer(2,10);
+				HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_0);
+				button_flag[0] = 0; // chuan bi cho trang thai nut nhan, dam bao truoc trang thai tiep theo button=0
+				}
 		break;
 	default:
 		break;

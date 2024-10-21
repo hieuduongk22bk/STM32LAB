@@ -1,4 +1,5 @@
 #include "button.h"
+
 int KeyReg0[NUM_BUT] = {NORMAL_STATE};
 int KeyReg1[NUM_BUT] = {NORMAL_STATE};
 int KeyReg2[NUM_BUT] = {NORMAL_STATE};
@@ -15,7 +16,13 @@ void getKeyInput(){
   KeyReg2[i] = KeyReg1[i];
   KeyReg1[i] = KeyReg0[i];
   // Add your key
-  KeyReg0[0] = HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_4);
+		if (i == 0) {
+			KeyReg0[i] = HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_3);
+		} else if (i == 1) {
+			KeyReg0[i] = HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_4);
+		} else if (i == 2) {
+			KeyReg0[i] = HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_5);
+		}
 
   if ((KeyReg1[i] == KeyReg0[i]) && (KeyReg1[i] == KeyReg2[i])){
     if (KeyReg2[i] != KeyReg3[i]){
