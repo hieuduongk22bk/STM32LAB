@@ -1,2 +1,2 @@
-fsm_manual.c:4:6:init_fsm_man	4	static
+fsm_manual.c:3:6:init_fsm_man	4	static
 fsm_manual.c:5:6:fsm_man_run	8	static

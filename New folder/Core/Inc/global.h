@@ -26,6 +26,8 @@
 #define MAN_AMBER_RED 14
 
 extern int status;
-extern int red_time, amber_time, green_time;
-extern int local_red_time,local_green_time,local_amber_time;
+extern int red_time1, amber_time1, green_time1;
+extern int local_red_time1,local_green_time1,local_amber_time1;
+extern int red_time2, amber_time2, green_time2;
+extern int local_red_time2,local_green_time2,local_amber_time2;
 #endif /* INC_GLOBAL_H_ */
