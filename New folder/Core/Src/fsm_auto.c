@@ -56,10 +56,13 @@ void fsm_auto_run() {
 
 		if(button_flag[0]==1){
 		status = MAN_GREEN_RED;
+
 		setTimer(1,10000);
 		setTimer(2,10);
 		setTimer(4,10);
+
 		HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_0);
+
 		button_flag[0] = 0; // chuan bi cho trang thai nut nhan, dam bao truoc trang thai tiep theo button=0
 		}
 		break;
@@ -84,10 +87,13 @@ void fsm_auto_run() {
 
 		if(button_flag[0]==1){
 				status = MAN_GREEN_RED;
+
 				setTimer(1,10000);
 				setTimer(2,10);
 				setTimer(4,10);
+
 				HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_0);
+
 				button_flag[0] = 0; // chuan bi cho trang thai nut nhan, dam bao truoc trang thai tiep theo button=0
 				}
 
@@ -113,10 +119,13 @@ void fsm_auto_run() {
 
 		if(button_flag[0]==1){
 				status = MAN_GREEN_RED;
+
 				setTimer(1,10000);
 				setTimer(2,10);
 				setTimer(4,10);
+
 				HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_0);
+
 				button_flag[0] = 0; // chuan bi cho trang thai nut nhan, dam bao truoc trang thai tiep theo button=0
 				}
 		break;
@@ -141,10 +150,13 @@ void fsm_auto_run() {
 
 		if(button_flag[0]==1){
 				status = MAN_GREEN_RED;
+
 				setTimer(1,10000);
 				setTimer(2,10);
 				setTimer(4,10);
+
 				HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_0);
+
 				button_flag[0] = 0; // chuan bi cho trang thai nut nhan, dam bao truoc trang thai tiep theo button=0
 				}
 		break;
