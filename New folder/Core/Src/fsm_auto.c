@@ -29,8 +29,10 @@ void fsm_auto_run() {
 			button_flag[0] = 0; // chuan bi cho trang thai nut nhan, dam bao truoc trang thai GREEN_RED button=0 (vi GREEN_RED co doi nut nhan)
 
 			setTimer(0, green_time1);
+			setTimer(1,	10);
 			setTimer(2, 10);
 			setTimer(3, 1000);
+			setTimer(4,	10);
 		}
 		break;
 	case GREEN_RED:
@@ -56,6 +58,7 @@ void fsm_auto_run() {
 		status = MAN_GREEN_RED;
 		setTimer(1,10000);
 		setTimer(2,10);
+		setTimer(4,10);
 		HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_0);
 		button_flag[0] = 0; // chuan bi cho trang thai nut nhan, dam bao truoc trang thai tiep theo button=0
 		}
@@ -83,6 +86,7 @@ void fsm_auto_run() {
 				status = MAN_GREEN_RED;
 				setTimer(1,10000);
 				setTimer(2,10);
+				setTimer(4,10);
 				HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_0);
 				button_flag[0] = 0; // chuan bi cho trang thai nut nhan, dam bao truoc trang thai tiep theo button=0
 				}
@@ -111,6 +115,7 @@ void fsm_auto_run() {
 				status = MAN_GREEN_RED;
 				setTimer(1,10000);
 				setTimer(2,10);
+				setTimer(4,10);
 				HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_0);
 				button_flag[0] = 0; // chuan bi cho trang thai nut nhan, dam bao truoc trang thai tiep theo button=0
 				}
@@ -138,6 +143,7 @@ void fsm_auto_run() {
 				status = MAN_GREEN_RED;
 				setTimer(1,10000);
 				setTimer(2,10);
+				setTimer(4,10);
 				HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_0);
 				button_flag[0] = 0; // chuan bi cho trang thai nut nhan, dam bao truoc trang thai tiep theo button=0
 				}
