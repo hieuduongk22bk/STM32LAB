@@ -4,9 +4,9 @@ void init_fsm_man() {
 }
 void fsm_man_run() {
 	switch (status) {
-	case MAN_GREEN_RED:
+	case MAN_RED:
 		if (button_flag[0] == 1) {
-			status = MAN_AMBER_RED;
+			status = MAN_RED;
 
 			setTimer(1, 10000);
 			setTimer(4, 250);
@@ -16,12 +16,11 @@ void fsm_man_run() {
 			button_flag[0] = 0; // chuan bi cho trang thai nut nhan, dam bao truoc trang thai tiep theo button=0
 		}
 		if (button_flag[1] == 1) {
-			green_time1 += 1000;
-			red_time1 += 1000;
 
-			if (red_time1 >= 100000) {
-				green_time1 = 1000;
-				red_time1 = green_time1 + amber_time1;
+
+			if (red_time1 < 99000) {
+				red_time1 += 1000;
+				green_time1 +=1000;
 			}
 
 			setTimer(1, 10000);
@@ -66,13 +65,13 @@ void fsm_man_run() {
 			setTimer(2, 250);
 		}
 		if (checkTimer(4) == 1){
-			toggle_led_green_red();
+			toggle_led_red();
 			setTimer(4,250);
 		}
 		break;
-	case MAN_AMBER_RED:
+	case MAN_AMBER:
 		if (button_flag[0] == 1) {
-			status = MAN_RED_GREEN;
+			status = MAN_RED;
 
 			setTimer(1, 10000);
 			setTimer(4, 250);
@@ -82,12 +81,10 @@ void fsm_man_run() {
 			button_flag[0] = 0; // chuan bi cho trang thai nut nhan, dam bao truoc trang thai tiep theo button=0
 		}
 		if (button_flag[1] == 1) {
-			amber_time1 += 1000;
-			red_time1 += 1000;
 
-			if (red_time1 >= 100000) {
-				amber_time1 = 1000;
-				red_time1 = green_time1 + amber_time1;
+			if (red_time1 < 99000 && amber_time1 < green_time1) {
+				amber_time1 += 1000;
+				red_time1 += 1000;
 			}
 
 			setTimer(1, 10000);
@@ -132,13 +129,13 @@ void fsm_man_run() {
 			setTimer(2, 250);
 		}
 		if (checkTimer(4) == 1){
-			toggle_led_amber_red();
+			toggle_led_amber();
 			setTimer(4,250);
 				}
 		break;
-	case MAN_RED_GREEN:
+	case MAN_GREEN:
 		if (button_flag[0] == 1) {
-			status = MAN_RED_AMBER;
+			status = MAN_RED;
 
 			setTimer(1, 10000);
 			setTimer(4, 250);
@@ -148,12 +145,9 @@ void fsm_man_run() {
 			button_flag[0] = 0; // chuan bi cho trang thai nut nhan, dam bao truoc trang thai tiep theo button=0
 		}
 		if (button_flag[1] == 1) {
-			green_time2 += 1000;
-			red_time2 += 1000;
-
-			if (red_time2 >= 100000) {
-				green_time2 = 1000;
-				red_time2 = green_time2 + amber_time2;
+			if (red_time1 < 99000) {
+				green_time1 += 1000;
+				red_time1 += 1000;
 			}
 
 			setTimer(1, 10000);
@@ -194,79 +188,16 @@ void fsm_man_run() {
 		}
 		if (checkTimer(2) == 1) {
 			//Update Display;
-			update7segBuffer(red_time2 / 1000, green_time2 / 1000);
+			update7segBuffer(red_time1 / 1000, green_time1 / 1000);
 			setTimer(2, 250);
 		}
 		if (checkTimer(4) == 1){
-			toggle_led_red_green();
+			toggle_led_green();
 			setTimer(4,250);
 				}
 		break;
-	case MAN_RED_AMBER:
-		if (button_flag[0] == 1) {
-			status = MAN_GREEN_RED;
 
-			setTimer(1, 10000);
-			setTimer(4, 250);
 
-			HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_0);
-
-			button_flag[0] = 0; // chuan bi cho trang thai nut nhan, dam bao truoc trang thai tiep theo button=0
-		}
-		if (button_flag[1] == 1) {
-			amber_time2 += 1000;
-			red_time2 += 1000;
-
-			if (red_time2 >= 100000) {
-				amber_time2 = 1000;
-				red_time2 = green_time2 + amber_time2;
-			}
-
-			setTimer(1, 10000);
-
-			HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_1);
-
-			button_flag[1] = 0; // chuan bi cho trang thai nut nhan, dam bao truoc trang thai tiep theo button=0
-		}
-		if (button_flag[2] == 1) {
-			status = GREEN_RED;
-
-			local_green_time1 = green_time1 / 1000;
-			local_red_time1 = red_time1 / 1000;
-			local_amber_time1 = amber_time1 / 1000;
-
-			button_flag[0] = 0; // chuan bi cho trang thai nut nhan, dam bao truoc trang thai GREEN_RED button=0 (vi GREEN_RED co doi nut nhan)
-			button_flag[2] = 0;
-
-			setTimer(0, green_time1);
-			setTimer(2, 10);
-			setTimer(3, 1000);
-
-			HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_2);
-		}
-		if (checkTimer(1) == 1) {
-			status = GREEN_RED;
-
-			local_green_time1 = green_time1 / 1000;
-			local_red_time1 = red_time1 / 1000;
-			local_amber_time1 = amber_time1 / 1000;
-
-			button_flag[0] = 0; // chuan bi cho trang thai nut nhan, dam bao truoc trang thai GREEN_RED button=0 (vi GREEN_RED co doi nut nhan)
-
-			setTimer(0, green_time1);
-			setTimer(2, 10);
-			setTimer(3, 1000);
-		}
-		if (checkTimer(2) == 1) {
-			//Update Display;
-			update7segBuffer(red_time2 / 1000, amber_time2 / 1000);
-			setTimer(2, 250);
-		}
-		if (checkTimer(4) == 1){
-			toggle_led_red_amber();
-			setTimer(4,250);
-				}
-		break;
 	default:
 		break;
 

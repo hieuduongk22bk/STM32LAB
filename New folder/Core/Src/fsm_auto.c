@@ -14,18 +14,6 @@ void fsm_auto_run() {
 		//TODO INIT
 		if (1) {
 			status = GREEN_RED;
-
-			red_time1 = green_time1 + amber_time1;
-			red_time2 = green_time2 + amber_time2;
-
-			local_green_time1 = green_time1/1000;
-			local_red_time1 = red_time1/1000;
-			local_amber_time1 = amber_time1/1000;
-
-			local_green_time2 = green_time2/1000;
-			local_red_time2 = red_time2/1000;
-			local_amber_time2 = amber_time2/1000;
-
 			button_flag[0] = 0; // chuan bi cho trang thai nut nhan, dam bao truoc trang thai GREEN_RED button=0 (vi GREEN_RED co doi nut nhan)
 
 			setTimer(0, green_time1);
