@@ -6,7 +6,7 @@ void fsm_man_run() {
 	switch (status) {
 	case MAN_RED:
 		if (button_flag[0] == 1) {
-			status = MAN_RED;
+			status = MAN_AMBER;
 
 			setTimer(1, 10000);
 			setTimer(4, 250);
@@ -71,7 +71,7 @@ void fsm_man_run() {
 		break;
 	case MAN_AMBER:
 		if (button_flag[0] == 1) {
-			status = MAN_RED;
+			status = MAN_GREEN;
 
 			setTimer(1, 10000);
 			setTimer(4, 250);

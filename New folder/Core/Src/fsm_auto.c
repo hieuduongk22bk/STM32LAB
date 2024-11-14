@@ -43,7 +43,7 @@ void fsm_auto_run() {
 		}
 
 		if(button_flag[0]==1){
-		status = MAN_GREEN_RED;
+		status = MAN_RED;
 
 		setTimer(1,10000);
 		setTimer(2,10);
@@ -58,7 +58,7 @@ void fsm_auto_run() {
 		led_amber_red();
 		if (checkTimer(0) == 1) {
 			status = RED_GREEN;
-			setTimer(0, green_time2);
+			setTimer(0, green_time1);
 		}
 		if (checkTimer(3) == 1) {
 			local_amber_time1--;
@@ -74,7 +74,7 @@ void fsm_auto_run() {
 		}
 
 		if(button_flag[0]==1){
-				status = MAN_GREEN_RED;
+				status = MAN_RED;
 
 				setTimer(1,10000);
 				setTimer(2,10);
@@ -90,23 +90,23 @@ void fsm_auto_run() {
 		led_red_green();
 		if (checkTimer(0) == 1) {
 			status = RED_AMBER;
-			setTimer(0, amber_time2);
+			setTimer(0, amber_time1);
 		}
 		if (checkTimer(3) == 1) {
-			local_green_time2--;
-			local_red_time2--;
-			if(local_green_time2 <= 0) local_green_time2 = green_time2/1000;
-			if(local_red_time2 <= 0) local_red_time2 = red_time2/1000;
+			local_green_time1--;
+			local_red_time1--;
+			if(local_green_time1 <= 0) local_green_time1 = green_time1/1000;
+			if(local_red_time1 <= 0) local_red_time1 = red_time1/1000;
 			setTimer(3, 1000);
 		}
 		if (checkTimer(2) == 1) {
 			//Update Display;
-			update7segBuffer(local_red_time2, local_green_time2);
+			update7segBuffer(local_red_time1, local_green_time1);
 			setTimer(2, 250);
 		}
 
 		if(button_flag[0]==1){
-				status = MAN_GREEN_RED;
+				status = MAN_RED;
 
 				setTimer(1,10000);
 				setTimer(2,10);
@@ -124,20 +124,20 @@ void fsm_auto_run() {
 			setTimer(0, green_time1);
 		}
 		if (checkTimer(3) == 1) {
-			local_amber_time2--;
-			local_red_time2--;
-			if(local_amber_time2 <= 0) local_amber_time2 = amber_time2/1000;
-			if(local_red_time2 <= 0) local_red_time2 = red_time2/1000;
+			local_amber_time1--;
+			local_red_time1--;
+			if(local_amber_time1 <= 0) local_amber_time1 = amber_time1/1000;
+			if(local_red_time1 <= 0) local_red_time1 = red_time1/1000;
 			setTimer(3, 1000);
 		}
 		if (checkTimer(2) == 1) {
 			//Update Display;
-			update7segBuffer(local_red_time2, local_amber_time2);
+			update7segBuffer(local_red_time1, local_amber_time1);
 			setTimer(2, 250);
 		}
 
 		if(button_flag[0]==1){
-				status = MAN_GREEN_RED;
+				status = MAN_RED;
 
 				setTimer(1,10000);
 				setTimer(2,10);
