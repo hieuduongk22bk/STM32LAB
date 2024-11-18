@@ -9,6 +9,8 @@
 #include "global.h"
 
 int status = INIT;
-int red_time1, amber_time1 = 1000, green_time1 = 3000;
-int red_time2, amber_time2 = 2000, green_time2 = 4000;
-int local_red_time1 ,local_green_time1,local_amber_time1;
+int mode = AUTO;
+int auto_timer = 0,man_timer=0,error_timer=0;
+int red_time=120, amber_time = 40, green_time = 80;
+int temp_red,temp_amber,temp_green;
+int first_time=1;

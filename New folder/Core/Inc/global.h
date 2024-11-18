@@ -10,10 +10,14 @@
 
 
 #include "main.h"
-#include "timer.h"
 #include "button.h"
 #include "led_traffic.h"
-#include "7segment.h"
+#include "7segment_bcd.h"
+
+#define AUTO 20
+#define MANUAL_RED 21
+#define MANUAL_GREEN 22
+#define MANUAL_AMBER 23
 
 #define INIT 0
 #define RED_GREEN 1
@@ -21,13 +25,11 @@
 #define GREEN_RED 3
 #define AMBER_RED 4
 
-#define MAN_RED_GREEN 11
-#define MAN_RED_AMBER 12
-#define MAN_GREEN_RED 13
-#define MAN_AMBER_RED 14
-
 extern int status;
-extern int red_time1, amber_time1, green_time1;
-extern int local_red_time1,local_green_time1,local_amber_time1;
+extern int mode;
 
+extern int red_time, amber_time, green_time;
+extern int temp_red,temp_amber,temp_green;
+extern int auto_timer,man_timer,error_timer;
+extern int first_time;
 #endif /* INC_GLOBAL_H_ */

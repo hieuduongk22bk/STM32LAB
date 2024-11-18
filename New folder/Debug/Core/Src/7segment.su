@@ -1,0 +1,3 @@
+7segment.c:14:6:seg_num	16	static
+7segment.c:80:6:update_buffer	16	static
+7segment.c:90:6:display	8	static

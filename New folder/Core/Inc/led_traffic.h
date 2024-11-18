@@ -15,10 +15,12 @@ void led_green_red();
 void led_amber_red();
 void led_red_green();
 void led_red_amber();
-void toggle_led_green_red();
-void toggle_led_amber_red();
-void toggle_led_red_green();
-void toggle_led_red_amber();
-
+void toggle_error();
+void no_toggle_error();
+void toggle_led_red();
+void toggle_led_amber();
+void toggle_led_green();
+void mode_light(int num);
+void reset_led();
 
 #endif /* INC_LED_TRAFFIC_H_ */

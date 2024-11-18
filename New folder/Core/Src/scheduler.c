@@ -24,8 +24,8 @@ void SCH_UPDATE(void){
 void SCH_ADD_TASK(void (*pTask)(void), uint32_t Delay, uint32_t Period){
 	if(index_val < SCH_MAX_TASKS)
 	SCH_TASKS_G[index_val].pTask = pTask;
-	SCH_TASKS_G[index_val].Delay = Delay;
-	SCH_TASKS_G[index_val].Period = Period;
+	SCH_TASKS_G[index_val].Delay = Delay/10;
+	SCH_TASKS_G[index_val].Period = Period/10;
 	SCH_TASKS_G[index_val].RunMe = 0;
 	SCH_TASKS_G[index_val].TaskID = index_val;
 	index_val++;

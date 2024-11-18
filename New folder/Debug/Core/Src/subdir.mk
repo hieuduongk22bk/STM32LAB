@@ -5,6 +5,14 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../Core/Src/7segment.c \
+../Core/Src/7segment_bcd.c \
+../Core/Src/button.c \
+../Core/Src/button_read.c \
+../Core/Src/fsm_auto.c \
+../Core/Src/fsm_man.c \
+../Core/Src/global.c \
+../Core/Src/led_traffic.c \
 ../Core/Src/main.c \
 ../Core/Src/scheduler.c \
 ../Core/Src/stm32f1xx_hal_msp.c \
@@ -14,6 +22,14 @@ C_SRCS += \
 ../Core/Src/system_stm32f1xx.c 
 
 OBJS += \
+./Core/Src/7segment.o \
+./Core/Src/7segment_bcd.o \
+./Core/Src/button.o \
+./Core/Src/button_read.o \
+./Core/Src/fsm_auto.o \
+./Core/Src/fsm_man.o \
+./Core/Src/global.o \
+./Core/Src/led_traffic.o \
 ./Core/Src/main.o \
 ./Core/Src/scheduler.o \
 ./Core/Src/stm32f1xx_hal_msp.o \
@@ -23,6 +39,14 @@ OBJS += \
 ./Core/Src/system_stm32f1xx.o 
 
 C_DEPS += \
+./Core/Src/7segment.d \
+./Core/Src/7segment_bcd.d \
+./Core/Src/button.d \
+./Core/Src/button_read.d \
+./Core/Src/fsm_auto.d \
+./Core/Src/fsm_man.d \
+./Core/Src/global.d \
+./Core/Src/led_traffic.d \
 ./Core/Src/main.d \
 ./Core/Src/scheduler.d \
 ./Core/Src/stm32f1xx_hal_msp.d \

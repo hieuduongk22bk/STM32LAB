@@ -1,0 +1,5 @@
+7segment_bcd.c:10:6:seg0	16	static
+7segment_bcd.c:76:6:seg1	16	static
+7segment_bcd.c:141:6:seg2	16	static
+7segment_bcd.c:205:6:seg3	16	static
+7segment_bcd.c:271:6:display_seg	16	static
