@@ -2402,10 +2402,10 @@ int main(void)
  8001270:	210a      	movs	r1, #10
  8001272:	4807      	ldr	r0, [pc, #28]	; (8001290 <main+0x5c>)
  8001274:	f000 f968 	bl	8001548 <SCH_ADD_TASK>
-  /* Infinite loop */
-  /* USER CODE BEGIN WHILE */
+
   while (1)
   {
+
     /* USER CODE END WHILE */
 	  SCH_DISPATCH_TASK();
  8001278:	f000 f9c6 	bl	8001608 <SCH_DISPATCH_TASK>
