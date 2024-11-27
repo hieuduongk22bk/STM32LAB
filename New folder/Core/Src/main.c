@@ -103,8 +103,10 @@ int main(void)
   SCH_ADD_TASK(button_mode, 10, 10);
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+
   while (1)
   {
+
     /* USER CODE END WHILE */
 	  SCH_DISPATCH_TASK();
     /* USER CODE BEGIN 3 */
