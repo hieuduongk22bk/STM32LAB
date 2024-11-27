@@ -9,6 +9,7 @@
 #define INC_FSM_MAN_H_
 
 #include "global.h"
+#include "button.h"
 
 extern int first_time;
 int _first(int*first_time);

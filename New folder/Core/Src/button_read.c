@@ -9,6 +9,7 @@
 void button_mode(){
 	getKeyInput();
 	if(button_flag[0]==1){
+		button_flag[0]=0;
 		HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_7);
 		//init
 		reset_led();
@@ -32,7 +33,9 @@ void button_mode(){
 			mode = MANUAL_RED;
 			mode_light(1);
 			break;
+
 		}
+
 	}
-	button_flag[0]=0;
+
 }

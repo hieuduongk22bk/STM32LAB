@@ -4,8 +4,8 @@ led_traffic.c:17:6:led_red_green	8	static
 led_traffic.c:22:6:led_red_amber	8	static
 led_traffic.c:26:6:reset_led	8	static
 led_traffic.c:30:6:toggle_led_red	8	static
-led_traffic.c:35:6:toggle_error	8	static
-led_traffic.c:38:6:no_toggle_error	8	static
+led_traffic.c:35:6:toggle_error_on	8	static
+led_traffic.c:38:6:toggle_error_off	8	static
 led_traffic.c:41:6:toggle_led_amber	8	static
 led_traffic.c:45:6:toggle_led_green	8	static
 led_traffic.c:50:6:mode_light	16	static

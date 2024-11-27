@@ -32,10 +32,10 @@ void toggle_led_red(){
 	HAL_GPIO_WritePin(GPIOA,GPIO_PIN_0| GPIO_PIN_2| GPIO_PIN_3| GPIO_PIN_5,RESET);
 
 }
-void toggle_error(){
-    HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_8);
+void toggle_error_on(){
+    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_8,SET);
 }
-void no_toggle_error(){
+void toggle_error_off(){
     HAL_GPIO_WritePin(GPIOB, GPIO_PIN_8,RESET);
 }
 void toggle_led_amber(){
