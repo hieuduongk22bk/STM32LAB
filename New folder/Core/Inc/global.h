@@ -14,16 +14,19 @@
 #include "led_traffic.h"
 #include "7segment_bcd.h"
 
-#define AUTO 20
-#define MANUAL_RED 21
-#define MANUAL_GREEN 22
-#define MANUAL_AMBER 23
 
 #define INIT 0
 #define RED_GREEN 1
 #define RED_AMBER 2
 #define GREEN_RED 3
 #define AMBER_RED 4
+
+#define UNABLE_MODE 18
+#define ENABLE_MODE 19
+#define AUTO 20
+#define MANUAL_RED 21
+#define MANUAL_GREEN 22
+#define MANUAL_AMBER 23
 
 extern int status;
 extern int mode;

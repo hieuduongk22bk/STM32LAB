@@ -14,6 +14,7 @@ int _first(int *first_time) {
 	}
 	return 0;
 }
+
 void fsm_man() {
 	if (_first(&first_time)) {
 		temp_red = red_time;
