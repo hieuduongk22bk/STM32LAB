@@ -100,11 +100,11 @@ int main(void)
 
   while (1)
   {
-	  fsm_auto_run();
-	  fsm_man_run();
+
     /* USER CODE END WHILE */
 
-
+	  fsm_auto_run();
+	   fsm_man_run();
 
 		  //TODO
 
